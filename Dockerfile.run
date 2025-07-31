@@ -1,0 +1,5 @@
+FROM copyit_img:latest
+
+COPY copyit_run.sh .
+
+ENTRYPOINT ["./copyit_run.sh"]

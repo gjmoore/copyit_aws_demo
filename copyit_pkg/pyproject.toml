@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "copyit"
+version = "1.0"
+authors = [
+    {name="Greg Moore", email="greg.moore@jpl.nasa.gov"},
+]
+description = "AWS-aware copy utility for demonstration purposes"
+readme = "README.md"
+dependencies = [
+    'boto3',
+]
+
+[project.scripts]
+copyit = "copyit:copyit.main"

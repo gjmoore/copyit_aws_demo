@@ -1,0 +1,14 @@
+FROM public.ecr.aws/amazonlinux/amazonlinux:latest
+
+# aws linux installs python3 -> python3.9; install corresponding
+# tools:
+RUN dnf upgrade && dnf install -y python3-devel python3-pip python3-setuptools
+
+# useful dev tools:
+RUN dnf install -y which vim
+
+WORKDIR '/root'
+
+# Python package:
+COPY copyit_pkg .
+RUN pip install .
